@@ -27,7 +27,11 @@ button {
     cursor: pointer;
 }
 
-/* Layout */
+i {
+    font-size: 1.2rem;
+}
+
+/* ----  Layout  ---- */
 
 body {
     display: grid;
@@ -37,15 +41,19 @@ body {
     color: var(--dark-blue);
 }
 
+/* Nav */
+
 nav {
     grid-column: 1/2;
     background-color: var(--secondary-color);
     color: var(--dark-blue);
+    font-size: 1rem;
     grid-row: 1/3; /* check if neccassary at end */
     display: flex;
     flex-direction: column;
     width: 100%;
     position: relative;
+    padding: 1.4rem;
 }
 
 nav>.nav-link {
@@ -53,11 +61,11 @@ nav>.nav-link {
 }
 
 nav>.nav-link:hover {
-    box-shadow: 0px 0px 4px 0px var(--dark-blue);
+    box-shadow: 0px 0px 3px 0px var(--dark-blue);
 }
 
 nav>.nav-link:active {
-    box-shadow: 0px 0px 4px 1px var(--dark-blue);
+    box-shadow: 0px 0px 3px 0.8px var(--dark-blue);
 }
 
 nav>a>i {
@@ -65,10 +73,60 @@ nav>a>i {
     padding-right: 30px;
 }
 
+/* Header */
+
 header {
     grid-column: 2/4;
     background-color: var(--main-color);
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-row: 1fr 1fr;
+    padding: 1.4rem;
 }
+
+header .search-bar {
+    grid-area: 1/1/2/2;
+}
+
+header #profile-info {
+    grid-area:1/2/2/3 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+header #user-dashboard-container {
+    grid-area:2/1/3/3 ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header #user-dashboard-container #welcome-container {
+    display: grid;
+    grid-template: repeat(2,1fr)/75px auto;
+    max-width: 400px;
+    align-items: center;
+}
+
+header #user-dashboard-container #welcome-container>div {
+    margin-left: 1.2rem;
+}
+
+header #user-dashboard-container #welcome-container .avatar-lg {
+    grid-area: 1/1/3/2;
+}
+
+header #user-dashboard-container .status-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+/* Section */
 
 section {
     grid-column: 2/3;
@@ -88,6 +146,20 @@ footer {
 }
 
 /* Module */
+
+#logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#logo>i {
+    font-size: 2.5rem;
+    margin-right: 1.2rem;
+}
 
 .btn{
     background-color: var(--secondary-color);
@@ -110,18 +182,53 @@ work on, button should move, not shadow
 }     
  */
 
-#logo{
+ 
+.search-bar {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
-    font-size: 1.2rem;
-    margin:1.4rem;
 }
 
-#logo>i {
-    font-size: 2.5rem;
-    margin-right: 1.2rem;
+.search-bar>input {
+    border: 1px solid var(--dark-blue);
+    border-radius: 20px 0 0 20px;
+    border-right: none;
+    padding: 10px;
+    height: 36px;
+    outline: none;
+    background-color: var(--main-color);
+    width: 100%;
+}
+
+.search-bar>input:focus + .search-btn{
+    color: var(--secondary-color);
+}
+
+.search-btn {
+    width: 40px;
+    height: 34px;
+    font-size: 20px;
+    border:1px solid var(--dark-blue);
+    border-left: none;
+    border-radius: 0 20px 20px 0;
+    text-align: center;
+    transition: color 0.5s;
+    transition-timing-function:ease-out;
+}
+
+.avatar-sl i {
+    font-size: 50px;
+}
+
+.avatar-lg i {
+font-size: 75px;
 }
 
  /* State */
+
+.bold{
+    font-weight: bolder;
+}
+
+.lg-text {
+    font-size: 1.5rem;
+}

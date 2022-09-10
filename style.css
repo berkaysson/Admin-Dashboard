@@ -195,14 +195,18 @@ work on, button should move, not shadow
     border: 1px solid var(--dark-blue);
     border-radius: 20px 0 0 20px;
     border-right: none;
-    padding: 10px;
+    padding: 10px 20px;
     height: 36px;
     outline: none;
-    background-color: var(--main-color);
     width: 100%;
+    background-color: var(--backgorund-color);
+    color: var(--dark-blue);
+    transition: 0.2s;
+    transition-timing-function:ease-in;
 }
 
-.search-bar>input:focus + .search-btn{
+.search-bar>input:focus, .search-bar>input:focus + .search-btn{
+    border-color: var(--secondary-color);
     color: var(--secondary-color);
 }
 
@@ -214,8 +218,9 @@ work on, button should move, not shadow
     border-left: none;
     border-radius: 0 20px 20px 0;
     text-align: center;
-    transition: color 0.5s;
-    transition-timing-function:ease-out;
+    transition: 0.2s;
+    transition-timing-function:ease;
+    background-color: var(--backgorund-color);
 }
 
 .avatar-sl i {

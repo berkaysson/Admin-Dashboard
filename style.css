@@ -42,7 +42,7 @@ i {
 body {
     display: grid;
     font-family: 'Roboto', sans-serif;
-    grid-template-columns: 20% 57.5% 22.5%;
+    grid-template-columns: minmax(18%, 210px) 57.5% 24.5%;
     background-color: var(--backgorund-color);
     color: var(--dark-blue);
 }
@@ -89,6 +89,7 @@ header {
     grid-template-columns: 60% 40%;
     grid-row: 1fr 1fr;
     padding: 1.4rem;
+    box-shadow: 0 0 0.33rem 0 var(--dark-blue);
 }
 
 header .search-bar {
@@ -140,7 +141,39 @@ header .status-container {
 
 section {
     grid-column: 2/3;
+    padding: 1.33rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
 }
+
+.archive{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px,1fr));
+    grid-gap: 1.2rem;
+    grid-auto-flow: dense;
+}
+
+section>.archive>article {
+    display: flex;
+    flex-direction: column;
+    /* width:minmax(250px,100%); */
+    gap: 1rem;
+    padding: 1.5rem;
+    border:1px solid var(--dark-blue);
+    border-radius: 2px;
+    border-left: 0.8rem solid var(--dark-blue);
+    box-shadow: 2px 2px 4px 0 var(--dark-blue);
+}
+
+.archive>article:hover {
+    transform: scale(1.01666);
+    border-color: var(--secondary-color);
+}
+
+/* Aside */
 
 aside {
     grid-column: 3/4;
@@ -216,7 +249,7 @@ footer {
     width: 34px;
     height: 34px;
     font-size: 25px;
-    margin-right: 1rem;
+    margin-right: 2rem;
     text-align: center;
     font-size: 0.8rem;
     padding: 3px;

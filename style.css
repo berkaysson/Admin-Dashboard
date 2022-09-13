@@ -67,12 +67,12 @@ nav>.nav-link {
 }
 
 nav>.nav-link:hover {
-    box-shadow: 0px 0px 3px 0px var(--dark-blue);
     transform: scalex(1.1);
+    box-shadow: 0px 0px 1px 1px var(--dark-blue);
 }
 
 nav>.nav-link:active {
-    box-shadow: 0px 0px 3px 0.8px var(--dark-blue);
+    box-shadow: 0px 0px 1px 0px var(--dark-blue);
 }
 
 nav>a>i {
@@ -176,22 +176,12 @@ footer {
     color: var(--dark-blue);
     padding: 0.5rem 1.5rem;
     border-radius: 1.33rem;
-    -webkit-box-shadow: 3px 2px 1px 0px var(--dark-blue);
-    box-shadow: 3px 2px 1px 0px var(--dark-blue);
 }
 
 .btn:hover {
     background-color: var(--backgorund-color);
 }
 
-.btn:active{
-    -webkit-box-shadow: 1px 1px 1px 0px var(--dark-blue);
-    box-shadow: 1px 1px 1px 0px var(--dark-blue);
-    transform: translate(2px,1px);
-}     
-
-
- 
 .search-bar {
     display: flex;
     align-items: center;
@@ -199,34 +189,38 @@ footer {
 
 .search-bar>input {
     border: 1px solid var(--dark-blue);
-    border-radius: 20px 0 0 20px;
-    border-right: none;
+    border-radius: 20px;
     padding: 10px 20px;
-    height: 36px;
+    height: 42px;
     outline: none;
-    width: 100%;
+    width: 10%;
     background-color: var(--backgorund-color);
     color: var(--dark-blue);
-    transition: 0.2s;
-    transition-timing-function:ease-in;
+    text-overflow: ellipsis;
 }
 
-.search-bar>input:focus, .search-bar>input:focus + .search-btn{
-    border-color: var(--secondary-color);
-    color: var(--secondary-color);
+.search-bar>input:focus{
+    width: 80%;
+}
+
+.search-btn:hover {
+    background-color: var(--backgorund-color);
+}
+
+.search-btn:active ~ .search-text {
+    transform: scale(0.8);
 }
 
 .search-btn {
-    width: 40px;
+    border-radius: 50%;
+    width: 34px;
     height: 34px;
-    font-size: 20px;
-    border:1px solid var(--dark-blue);
-    border-left: none;
-    border-radius: 0 20px 20px 0;
+    font-size: 25px;
+    margin-right: 1rem;
     text-align: center;
-    transition: 0.2s;
-    transition-timing-function:ease;
-    background-color: var(--backgorund-color);
+    font-size: 0.8rem;
+    padding: 3px;
+    background-color: var(--secondary-color);
 }
 
 .avatar-sl i {
@@ -245,4 +239,16 @@ font-size: 75px;
 
 .lg-text {
     font-size: 1.5rem;
+}
+
+.btn-shadow {
+    -webkit-box-shadow: 3px 2px 0px 0px var(--dark-blue);
+    box-shadow: 3px 2px 0px 0px var(--dark-blue);
+    border: 1px solid var(--dark-blue);
+}
+
+.btn-shadow:active {
+    -webkit-box-shadow: 1px 1px 2px 0px var(--dark-blue);
+    box-shadow: 1px 1px 2px 0px var(--dark-blue);
+    transform: translate(2px,1px);
 }

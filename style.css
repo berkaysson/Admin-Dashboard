@@ -31,6 +31,7 @@ h1,h2,h3,h4,p {
 button {
     all: unset;
     cursor: pointer;
+    transition: all 0.1s ease-in;
 }
 
 i {
@@ -67,12 +68,13 @@ nav>.nav-link {
 }
 
 nav>.nav-link:hover {
-    transform: scalex(1.1);
+    transform: scale(1.05);
     box-shadow: 0px 0px 1px 1px var(--dark-blue);
 }
 
 nav>.nav-link:active {
     box-shadow: 0px 0px 1px 0px var(--dark-blue);
+    transform: scale(1.033);
 }
 
 nav>a>i {
@@ -173,6 +175,17 @@ section>.archive>article {
     border-color: var(--secondary-color);
 }
 
+.article-buttons{
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.article-buttons>button{
+    margin-right: 0.5rem;
+
+}
+
 /* Aside */
 
 aside {
@@ -262,6 +275,14 @@ footer {
 
 .avatar-lg i {
 font-size: 75px;
+}
+
+.article-btn:hover {
+    color: var(--secondary-color);
+}
+
+.article-btn:active{
+    transform:rotate(45deg);
 }
 
  /* State */

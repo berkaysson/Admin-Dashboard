@@ -94,30 +94,31 @@ article {
 body {
     display: grid;
     font-family: 'Roboto', sans-serif;
-    grid-template-columns: minmax(220px, 18%) 57.5% 24.5%;
-    grid-template-rows: 220px auto;
+    grid-template-columns: minmax(220px, 18%) auto;
     background-color: var(--backgorund-color);
     color: var(--dark-blue);
-    /* max-width: 2400px; */
-    height: 100vh;
-    overflow: auto;
 }
 
 /* Nav */
-
-nav {
+.nav-wrapper {
     grid-column: 1/2;
     background-color: var(--secondary-color);
-    color: var(--dark-blue);
-    font-size: 1rem;
-    grid-row: 1/3;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: var(--padding);
     box-shadow: 0 0 0.33rem 0 var(--dark-blue);
     z-index: 1;
 }
+
+nav {
+    padding: var(--padding);
+    color: var(--dark-blue);
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    top: 0;
+    left: 0;
+    position: sticky;
+}
+
 
 .nav-link {
     padding: var(--btn-padding) var(--padding);
@@ -139,10 +140,25 @@ nav>a>i {
     margin-right: var(--margin);
 }
 
+nav>a:nth-child(2){
+    margin-top: 1rem;
+}
+
+nav>a:nth-child(8){
+    margin-top: 6rem;
+}
+/* Main */
+
+main{
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
 /* Header */
 
 header {
-    grid-column: 2/4;
+    grid-column: 1/3;
     background-color: var(--main-color);
     display: grid;
     grid-template-columns: 60% 40%;
@@ -207,7 +223,7 @@ header {
 /* Section */
 
 section {
-    grid-column: 2/3;
+    grid-column: 1/2;
     padding: var(--padding) 2.5rem;
     display: flex;
     flex-direction: column;
@@ -247,7 +263,7 @@ section {
 /* Aside */
 
 aside {
-    grid-column: 3/4;
+    grid-column: 2/3;
     padding: var(--padding);
 }
 
